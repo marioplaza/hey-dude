@@ -27,12 +27,12 @@ El repositorio está organizado en los siguientes directorios principales:
 *   `backend/`: Contiene el código de la aplicación backend en Spring Boot.
 *   `docs/`: Contiene la documentación del proyecto.
 
-## 📄 documentación de diseño
+## 📄 Documentación de diseño
 
 El documento de diseño principal con la definición del MVP se puede encontrar en [`docs/DD-MVP-Core-Features.md`](./docs/DD-MVP-Core-Features.md).
 
 La plantilla genérica para crear nuevos documentos de diseño está en [`docs/DESIGN_DOC_TEMPLATE.md`](./docs/DESIGN_DOC_TEMPLATE.md).
 
-## 🚀 cómo empezar
+## 🚀 Cómo empezar
 
 _Esta sección se actualizará con las instrucciones necesarias para compilar y ejecutar el proyecto._ 
