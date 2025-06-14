@@ -1,39 +1,35 @@
 # Hey dude!
 
-> Mobile app for managing group trips and festivals. Split expenses, find your friends, and send quick notifications.
+> App móvil para gestionar viajes y festivales en grupo. Divide gastos, encuentra a tus amigos y envía notificaciones rápidas.
 
-This repository contains the source code for the "Hey dude!" project, a mobile application designed to simplify coordination for groups of friends during events like festivals or trips.
-
-## Tech Stack
-
-*   **Frontend (Mobile):** [Flutter](https://flutter.dev/)
-*   **Backend:** [Spring Boot](https://spring.io/projects/spring-boot)
-
-## Project Structure
-
-The repository is organized into the following main directories:
-
-*   `frontend/`: Contains the Flutter mobile application.
-*   `backend/`: Contains the Spring Boot backend application.
-*   `docs/`: Contains project documentation, including the main Design Document and templates.
-
-## Getting Started
-
-_This section will be updated with instructions on how to build and run the project._
+Este repositorio contiene el código fuente del proyecto "Hey dude!", una aplicación diseñada para simplificar la coordinación de grupos de amigos durante eventos como festivales o viajes.
 
 ## 🤔 ¿De qué se trata?
 
-_Aquí va la descripción detallada del proyecto. ¿Qué problema resuelve? ¿Quién es el público objetivo?_
+"Hey dude!" ataca los problemas más comunes de los planes en grupo: gestionar quién paga qué, no perderse en sitios grandes y comunicarse de forma rápida y eficiente. La idea es centralizar todo lo necesario para que solo te preocupes de disfrutar.
 
-## ✨ Características
+## ✨ Características Principales
 
-*   Característica 1
-*   Característica 2
-*   Característica 3
+*   **Gestión de Gastos:** Añade gastos, asigna quién participa y consulta los balances en tiempo real para saber quién debe dinero a quién. Incluye un flujo de confirmación para saldar deudas.
+*   **Mapa de Amigos:** Visualiza la ubicación de los miembros de tu grupo en un mapa en tiempo real para encontraros fácilmente en lugares concurridos.
+*   **Notificaciones Rápidas (Pings):** Envía mensajes cortos y directos a todo el grupo o a personas específicas para comunicados urgentes sin el ruido de un chat convencional.
 
-## 🚀 Empezando
+## 💻 Tecnologías
 
-_Instrucciones sobre cómo instalar y correr el proyecto localmente._
+*   **Frontend (Móvil):** [Flutter](https://flutter.dev/)
+*   **Backend:** [Spring Boot](https://spring.io/projects/spring-boot)
+
+## 📂 Estructura del Proyecto
+
+El repositorio está organizado en los siguientes directorios principales:
+
+*   `frontend/`: Contiene el código de la aplicación móvil en Flutter.
+*   `backend/`: Contiene el código de la aplicación backend en Spring Boot.
+*   `docs/`: Contiene la documentación del proyecto. El documento de diseño principal con la definición del MVP se puede encontrar en [`docs/DD-MVP-Core-Features.md`](./docs/DD-MVP-Core-Features.md).
+
+## 🚀 Cómo empezar
+
+_Esta sección se actualizará con las instrucciones necesarias para compilar y ejecutar el proyecto._
 
 ## 📄 Documentación de Diseño
 
