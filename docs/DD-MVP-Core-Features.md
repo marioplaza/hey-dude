@@ -81,8 +81,10 @@ _Este espacio puede usarse para registrar decisiones importantes que se tomen en
 
 _El siguiente flujo describe cómo un usuario se registra, crea un plan e invita a sus amigos._
 
-1.  **Registro de Usuario:** El usuario se registra en la aplicación usando su email y una contraseña. Se podría añadir un registro con Google/Apple para simplificar.
-2.  **Creación del Plan:** Una vez registrado, el usuario puede crear un "Plan" (ej: "Festival FIB 2024"). Al crearlo, se convierte en el administrador de ese plan.
+1.  **Registro/Login de usuario:**
+    *   **Método clásico:** El usuario se registra en la aplicación usando su email y una contraseña, o inicia sesión si ya tiene cuenta.
+    *   **Método social:** El usuario puede registrarse o iniciar sesión directamente con su cuenta de Google, Facebook o Apple. En el primer registro social, la app obtendrá el nombre y el email del proveedor.
+2.  **Creación del Plan:** Una vez autenticado, el usuario puede crear un "Plan" (ej: "Festival FIB 2024"). Al crearlo, se convierte en el administrador de ese plan.
 3.  **Invitación por email:**
     *   Dentro del plan, el administrador tiene una opción para "Invitar Amigos".
     *   Introduce las direcciones de email de los amigos que quiere invitar.
@@ -129,7 +131,9 @@ _A continuación se definen las estructuras de datos principales para el MVP._
 | `id` | UUID | Identificador único del usuario. | `c3a5a3d4-3f9b-4b8c-8f9f-6e8d2e8b1e4c` |
 | `nombre` | String | Nombre del usuario. | `Mario` |
 | `email` | String | Email del usuario (usado para login). | `mario@email.com` |
-| `password` | String | Contraseña hasheada. | `(hash)` |
+| `password` | String | Contraseña hasheada. Nulo si usa login social. | `(hash)` |
+| `provider` | String | Proveedor de autenticación. | `LOCAL`, `GOOGLE`, `FACEBOOK`, `APPLE` |
+| `provider_id` | String | ID único del usuario en el proveedor social. | `1020...` |
 | `telefono` | String | Teléfono móvil (opcional, para futuras features). | `+34600112233` |
 | `url_foto_perfil` | String | URL a la imagen de perfil (opcional). | `https://.../foto.jpg` |
 | `fecha_creacion` | Timestamp | Fecha y hora de creación del usuario. | `2024-05-21T10:00:00Z` |
@@ -198,11 +202,14 @@ _Este espacio puede usarse para registrar decisiones importantes que se tomen en
 _A continuación se definen los endpoints de la API REST que el backend expondrá. Esto sirve como contrato entre el frontend y el backend._
 
 ### Autenticación y usuario
-| Método | Endpoint | Descripción |
-| :--- | :--- | :--- |
-| `POST` | `/auth/register` | Registra un nuevo usuario. |
-| `POST` | `/auth/login` | Inicia sesión y devuelve un token de autenticación. |
-| `GET` | `/users/me` | Obtiene el perfil del usuario actualmente logueado. |
+| Método | Endpoint | Descripción | Notas/Reglas de Negocio |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/auth/register` | Registra un nuevo usuario con email y contraseña. | |
+| `POST` | `/auth/login` | Inicia sesión con email/contraseña y devuelve un token JWT. | |
+| `POST` | `/auth/social-login` | Registra o inicia sesión con un proveedor social (Google, etc.). | El body contiene `{ "provider": "GOOGLE", "token": "..." }`. Devuelve un token JWT. |
+| `GET` | `/users/me` | Obtiene el perfil del usuario actualmente logueado. | Requiere token JWT. |
+| `PUT` | `/users/me` | Actualiza el perfil del usuario logueado (nombre, foto, etc.). | Requiere token JWT. |
+| `DELETE`| `/users/me` | Elimina la cuenta del usuario logueado. | Requiere token JWT. |
 
 ### Planes
 | Método | Endpoint | Descripción | Notas/Reglas de Negocio |
