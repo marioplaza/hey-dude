@@ -91,6 +91,31 @@ _El siguiente flujo describe cómo un usuario se registra, crea un plan e invita
     *   **Si la app SÍ está instalada:** El enlace abre directamente "Hey dude!" y muestra una pantalla para confirmar y unirse al plan.
 5.  **Unión al Plan:** Una vez que el amigo acepta, se añade al plan y ya puede ver los gastos, el mapa y los pings del grupo.
 
+A continuación se muestra un diagrama que visualiza este flujo:
+
+```mermaid
+graph TD
+    subgraph "Flujo del Administrador"
+        A[Usuario crea un Plan] --> B{Invita amigos por email};
+    end
+
+    subgraph "Backend"
+        B --> C[Backend envía emails<br>con enlace único];
+    end
+
+    subgraph "Flujo del Amigo Invitado"
+        C --> D{Amigo recibe email y<br>hace clic en enlace};
+        D --> E{¿Tiene la app instalada?};
+        E -- No --> F[Redirige a App Store / Play Store];
+        F --> G[Instala y abre la app];
+        E -- Sí --> H[Abre la app directamente];
+        G --> I{App detecta enlace pendiente};
+        H --> J[Muestra pantalla para unirse];
+        I --> J;
+        J --> K[Usuario se une al Plan];
+    end
+```
+
 ## 9. Modelo de Datos (Entidades Principales)
 
 _A continuación se definen las estructuras de datos principales para el MVP._
