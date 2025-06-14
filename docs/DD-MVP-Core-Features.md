@@ -10,7 +10,7 @@
 
 ---
 
-## 1. Resumen (Abstract)
+## 1. Resumen
 
 _"Hey dude!" es una aplicación móvil para grupos de amigos que asisten a eventos como festivales o viajes. La app resuelve tres problemas clave: el reparto de gastos, la localización de amigos en tiempo real dentro del evento y la comunicación rápida a través de notificaciones push._
 
@@ -21,7 +21,7 @@ _Cuando un grupo de amigos va a un festival, viaje o plan similar, se enfrenta a
 *   **Pérdida de amigos:** En lugares grandes y concurridos como un festival de música, es extremadamente fácil separarse del grupo y muy difícil reencontrarse. La comunicación tradicional (llamadas, mensajes de texto) no es eficiente por el ruido, la mala cobertura o la falta de referencias claras.
 *   **Comunicación ineficiente:** Se necesita una forma de enviar mensajes cortos y urgentes a todo el grupo o a miembros específicos (ej. "¡El concierto empieza, venid al escenario principal!", "Estoy en la barra de la entrada") que no se pierda en un chat grupal ruidoso.
 
-## 3. Objetivos y Metas
+## 3. Objetivos y metas
 
 ### 3.1. Objetivos (Goals)
 
@@ -29,17 +29,17 @@ _Cuando un grupo de amigos va a un festival, viaje o plan similar, se enfrenta a
 *   **Mejorar la localización:** Proveer un mapa del evento donde los miembros del grupo puedan ver la ubicación de sus amigos en tiempo real.
 *   **Agilizar la comunicación:** Permitir el envío de notificaciones push predefinidas o personalizadas a todo el grupo o a miembros seleccionados.
 
-### 3.2. No-Objetivos (Non-Goals)
+### 3.2. No-objetivos (non-goals)
 
 *   **No será una app de chat completa:** La comunicación se centra en "pings" o notificaciones, no en conversaciones largas.
 *   **No se integra con bancos (inicialmente):** Los pagos y deudas se saldan fuera de la app. La app es solo para el seguimiento.
 *   **La localización es solo durante el evento:** La app no rastrea la ubicación de los usuarios de forma continua fuera del contexto de un "plan" o "evento" activo.
 
-## 4. Solución Propuesta
+## 4. Solución propuesta
 
 _Se desarrollará una aplicación móvil para iOS y Android (usando Flutter) y un servicio de backend (usando Spring Boot). La app se estructurará en torno a "Planes" o "Eventos" (ej. "Festival PortAmérica 2024"). Un usuario crea un plan e invita a sus amigos. Dentro de un plan, los usuarios tendrán acceso a tres módulos principales:_
 
-*   **Módulo de Gastos (Splitter):**
+*   **Módulo de gastos (Splitter):**
     *   Una lista de todos los gastos del grupo, con indicación visual de su estado (pendiente, pagado, etc.).
     *   Un botón para añadir un nuevo gasto (descripción, cantidad, quién pagó).
     *   Al añadir un gasto, se podrá seleccionar a quiénes se les imputa (por defecto, a todos los miembros del plan, incluido el que paga).
@@ -47,17 +47,17 @@ _Se desarrollará una aplicación móvil para iOS y Android (usando Flutter) y u
     *   Dentro de un gasto en el que un usuario debe dinero, tendrá un botón para "Marcar como pagado".
     *   El creador del gasto verá una notificación o indicación de que un pago está pendiente de su confirmación, y podrá aceptarlo para cerrar esa deuda específica.
 
-*   **Módulo de Localización (Map):**
+*   **Módulo de localización (Map):**
     *   Un mapa (usando un proveedor como Google Maps o Mapbox) centrado en la zona del evento.
     *   Pines/avatares mostrando la última ubicación conocida de cada miembro del grupo.
     *   La ubicación se actualizará periódicamente (cada X minutos) cuando la app esté en segundo plano, o con más frecuencia si está en primer plano. Se debe notificar al usuario de este comportamiento.
 
-*   **Módulo de Mensajes Rápidos (Pings):**
+*   **Módulo de mensajes rápidos (Pings):**
     *   Una interfaz para enviar una notificación push.
     *   Se podrá seleccionar a quién enviar el "ping" (todo el grupo o seleccionar amigos).
     *   Habrá una lista de mensajes predefinidos ("Estoy aquí", "Veniros", "¿Dónde estáis?") y la opción de escribir uno corto.
 
-## 5. Otras Soluciones Consideradas
+## 5. Otras soluciones consideradas
 
 _Descripción breve de otras alternativas que se exploraron y por qué se descartaron._
 
@@ -68,26 +68,26 @@ _Descripción breve de otras alternativas que se exploraron y por qué se descar
     *   **Pros:** _La mejor experiencia de usuario._
     *   **Contras:** _Requiere un gran esfuerzo técnico._
 
-## 6. Preguntas Abiertas y Riesgos
+## 6. Preguntas abiertas y riesgos
 
 _¿Qué dudas quedan por resolver? ¿Qué riesgos podrían afectar el proyecto?_
 
 
-## 7. Discusión y Comentarios
+## 7. Discusión y comentarios
 
 _Este espacio puede usarse para registrar decisiones importantes que se tomen en reuniones o en los comentarios de este documento._
 
-## 8. Flujo de Creación de Grupos e Invitación
+## 8. Flujo de creación de grupos e invitación
 
 _El siguiente flujo describe cómo un usuario se registra, crea un plan e invita a sus amigos._
 
 1.  **Registro de Usuario:** El usuario se registra en la aplicación usando su email y una contraseña. Se podría añadir un registro con Google/Apple para simplificar.
 2.  **Creación del Plan:** Una vez registrado, el usuario puede crear un "Plan" (ej: "Festival FIB 2024"). Al crearlo, se convierte en el administrador de ese plan.
-3.  **Invitación por Email:**
+3.  **Invitación por email:**
     *   Dentro del plan, el administrador tiene una opción para "Invitar Amigos".
     *   Introduce las direcciones de email de los amigos que quiere invitar.
     *   El sistema envía un email a cada dirección con un enlace único de invitación.
-4.  **Recepción de la Invitación (Flujo del Amigo):**
+4.  **Recepción de la invitación (flujo del amigo):**
     *   El amigo recibe el email y hace clic en el enlace.
     *   **Si la app NO está instalada:** El enlace le redirige a la App Store (iOS) or Google Play Store (Android). Una vez instalada y abierta, la app detecta el enlace pendiente y le pregunta si quiere unirse al plan.
     *   **Si la app SÍ está instalada:** El enlace abre directamente "Hey dude!" y muestra una pantalla para confirmar y unirse al plan.
@@ -118,7 +118,7 @@ graph TD
     end
 ```
 
-## 9. Modelo de Datos (Entidades Principales)
+## 9. Modelo de datos (entidades principales)
 
 _A continuación se definen las estructuras de datos principales para el MVP._
 
@@ -189,15 +189,15 @@ _A continuación se definen las estructuras de datos principales para el MVP._
 ### Relación: `Ping_Destinatarios`
 *Tabla intermedia que define qué usuarios recibieron un ping concreto. Si está vacía, se asume que era para todo el grupo.*
 
-## 10. Discusión y Comentarios
+## 10. Discusión y comentarios
 
 _Este espacio puede usarse para registrar decisiones importantes que se tomen en reuniones o en los comentarios de este documento._
 
-## 11. API Endpoints (Contrato Preliminar)
+## 11. API endpoints (contrato preliminar)
 
 _A continuación se definen los endpoints de la API REST que el backend expondrá. Esto sirve como contrato entre el frontend y el backend._
 
-### Autenticación y Usuario
+### Autenticación y usuario
 | Método | Endpoint | Descripción |
 | :--- | :--- | :--- |
 | `POST` | `/auth/register` | Registra un nuevo usuario. |
@@ -213,7 +213,7 @@ _A continuación se definen los endpoints de la API REST que el backend expondr�
 | `PUT` | `/plans/{planId}` | Actualiza los datos de un plan (nombre, descripción, fechas...). | Solo el admin del plan puede hacerlo. |
 | `DELETE` | `/plans/{planId}` | Borra un plan completo. | Solo el admin del plan puede. Se borra toda la info asociada. |
 
-### Miembros y Participantes (dentro de un Plan)
+### Miembros y participantes (dentro de un Plan)
 | Método | Endpoint | Descripción | Notas/Reglas de Negocio |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/plans/{planId}/members` | Obtiene la lista de usuarios que participan en un plan. | |
@@ -234,7 +234,7 @@ _A continuación se definen los endpoints de la API REST que el backend expondr�
 | `PUT` | `/plans/{planId}/expenses/{expenseId}` | Modifica un gasto. | Solo el creador del gasto puede. |
 | `DELETE`| `/plans/{planId}/expenses/{expenseId}` | Elimina un gasto. | Solo el creador del gasto puede. |
 
-### Pagos y Balances (dentro de un Plan)
+### Pagos y balances (dentro de un Plan)
 | Método | Endpoint | Descripción | Notas/Reglas de Negocio |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/plans/{planId}/balance` | Obtiene el balance final del plan (quién debe a quién). | |
@@ -247,6 +247,6 @@ _A continuación se definen los endpoints de la API REST que el backend expondr�
 | `GET` | `/plans/{planId}/pings` | Obtiene los últimos pings del plan. | |
 | `POST` | `/plans/{planId}/pings` | Envía un nuevo ping. | El body puede incluir a quién se dirige. |
 
-## 12. Discusión y Comentarios
+## 12. Discusión y comentarios
 
 _Este espacio puede usarse para registrar decisiones importantes que se tomen en reuniones o en los comentarios de este documento._ 
