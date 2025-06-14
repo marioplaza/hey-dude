@@ -40,10 +40,12 @@ _Cuando un grupo de amigos va a un festival, viaje o plan similar, se enfrenta a
 _Se desarrollará una aplicación móvil para iOS y Android (usando Flutter) y un servicio de backend (usando Spring Boot). La app se estructurará en torno a "Planes" o "Eventos" (ej. "Festival PortAmérica 2024"). Un usuario crea un plan e invita a sus amigos. Dentro de un plan, los usuarios tendrán acceso a tres módulos principales:_
 
 *   **Módulo de Gastos (Splitter):**
-    *   Una lista de todos los gastos del grupo.
+    *   Una lista de todos los gastos del grupo, con indicación visual de su estado (pendiente, pagado, etc.).
     *   Un botón para añadir un nuevo gasto (descripción, cantidad, quién pagó).
-    *   Al añadir un gasto, se podrá seleccionar a quiénes se les imputa (por defecto, a todos).
-    *   Una pantalla de "Balances" que muestre quién debe dinero a quién.
+    *   Al añadir un gasto, se podrá seleccionar a quiénes se les imputa (por defecto, a todos los miembros del plan, incluido el que paga).
+    *   Una pantalla de "Balances" que muestre un resumen claro de quién debe dinero a quién.
+    *   Dentro de un gasto en el que un usuario debe dinero, tendrá un botón para "Marcar como pagado".
+    *   El creador del gasto verá una notificación o indicación de que un pago está pendiente de su confirmación, y podrá aceptarlo para cerrar esa deuda específica.
 
 *   **Módulo de Localización (Map):**
     *   Un mapa (usando un proveedor como Google Maps o Mapbox) centrado en la zona del evento.
