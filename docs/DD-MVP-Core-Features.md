@@ -57,7 +57,7 @@ _Se desarrollará una aplicación móvil para iOS y Android (usando Flutter) y u
 
 ## 5. Otras Soluciones Consideradas
 
-_Describe brevemente otras alternativas que exploraste y por qué las descartaste. Esto demuestra que has hecho un análisis completo._
+_Descripción breve de otras alternativas que se exploraron y por qué se descartaron._
 
 *   **Opción A:** _Descripción..._
     *   **Pros:** _Fácil de implementar._
@@ -70,8 +70,6 @@ _Describe brevemente otras alternativas que exploraste y por qué las descartast
 
 _¿Qué dudas quedan por resolver? ¿Qué riesgos podrían afectar el proyecto?_
 
-*   **Pregunta:** _¿Cómo se comportará esta pantalla en dispositivos muy pequeños?_
-*   **Riesgo:** _La API externa de la que dependemos tiene un límite de peticiones._
 
 ## 7. Discusión y Comentarios
 
