@@ -25,12 +25,14 @@ El repositorio está organizado en los siguientes directorios principales:
 
 *   `frontend/`: Contiene el código de la aplicación móvil en Flutter.
 *   `backend/`: Contiene el código de la aplicación backend en Spring Boot.
-*   `docs/`: Contiene la documentación del proyecto. El documento de diseño principal con la definición del MVP se puede encontrar en [`docs/DD-MVP-Core-Features.md`](./docs/DD-MVP-Core-Features.md).
+*   `docs/`: Contiene la documentación del proyecto.
 
-## 🚀 Cómo empezar
+## 📄 documentación de diseño
 
-_Esta sección se actualizará con las instrucciones necesarias para compilar y ejecutar el proyecto._
+El documento de diseño principal con la definición del MVP se puede encontrar en [`docs/DD-MVP-Core-Features.md`](./docs/DD-MVP-Core-Features.md).
 
-## 📄 Documentación de diseño
+La plantilla genérica para crear nuevos documentos de diseño está en [`docs/DESIGN_DOC_TEMPLATE.md`](./docs/DESIGN_DOC_TEMPLATE.md).
 
-Todos los documentos de diseño (Design Docs) se encuentran en la carpeta `/docs`, siguiendo la [plantilla de documento de diseño](DESIGN_DOC_TEMPLATE.md). 
+## 🚀 cómo empezar
+
+_Esta sección se actualizará con las instrucciones necesarias para compilar y ejecutar el proyecto._ 
